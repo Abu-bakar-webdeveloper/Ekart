@@ -1,0 +1,19 @@
+<app-filter 
+class="" 
+[all]="totalProducts" 
+[inStock]="totalInStock" 
+[outOfStock]="totalOutOfStock" 
+(selectedFilteredRadioButtonChanged)="onFilterChange($event)"
+>
+</app-filter>
+<div class="d-flex flex-wrap container justify-content-center gap-4" >
+  <div *ngFor="let product of products">
+    <!-- selectedFilteredRadioButton === 'all' || product.inStock.toString() === selectedFilteredRadioButton ||  -->
+    <app-item-card 
+      [product]="product"
+      *ngIf="searchText === '' || product.Name.toLowerCase().includes(searchText)"
+      >
+    </app-item-card>
+  </div>
+</div>
+  

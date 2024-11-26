@@ -1,0 +1,15 @@
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6 col-lg-6 col-11">
+        <div class="input-group">
+            <input type="text" class="form-control" #InputSearch placeholder="Search here..." aria-label="Search"
+                aria-describedby="button-addon2">
+            <button class="btn btn-secondary" type="button" id="button-addon2"
+                style="background-color: #282828; color: #fff;" (click)="onUpdateText(InputSearch)">
+                Search
+            </button>
+        </div>
+    </div>
+</div>
+<div class="text-center m-4">
+    <p *ngIf="SearchText != ''">Search result for: <span class="fw-bold">{{SearchText}}</span></p>
+</div>
