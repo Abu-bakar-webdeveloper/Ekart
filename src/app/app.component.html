@@ -1,4 +1,5 @@
 <app-top-header></app-top-header>
 <app-header></app-header>
 <app-search-bar (filterText)="setSearchText($event)"></app-search-bar>
-<app-items [searchText]="searchText"></app-items>
+<app-items [searchText]="searchText" #ProductItemsComponent></app-items>
+<app-product-detail *ngIf="ProductItemsComponent.selectedProduct"></app-product-detail>

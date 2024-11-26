@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -18,8 +18,11 @@ export class SearchBarComponent {
   
  }
 
- onUpdateText(inputEl: HTMLInputElement) {
-  this.SearchText = inputEl.value;
+
+ @ViewChild('InputSearch') searchInputEl?: ElementRef;
+
+ onUpdateText() {
+  this.SearchText = this.searchInputEl?.nativeElement.value;
   this.filterText.emit(this.SearchText);
  }
  

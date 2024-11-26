@@ -7,7 +7,7 @@ class=""
 >
 </app-filter>
 <div class="d-flex flex-wrap container justify-content-center gap-4" >
-  <div *ngFor="let product of products">
+  <div *ngFor="let product of products" class="ekart--product--container" (click)="selectedProduct = product">
     <!-- selectedFilteredRadioButton === 'all' || product.inStock.toString() === selectedFilteredRadioButton ||  -->
     <app-item-card 
       [product]="product"

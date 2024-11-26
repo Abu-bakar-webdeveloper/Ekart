@@ -13,6 +13,8 @@ import { FilterComponent } from './filter/filter.component';
   styleUrl: './items.component.css'
 })
 export class ItemsComponent {
+  
+ selectedProduct?: Product;
  products: Product[] = Products;
 
  totalProducts: number = this.products.length;
