@@ -7,13 +7,38 @@ class=""
 >
 </app-filter>
 <div class="d-flex flex-wrap container justify-content-center gap-4" >
-  <div *ngFor="let product of products" class="ekart--product--container" (click)="selectedProduct = product">
+  <ng-container *ngFor="let product of products" class="ekart--product--container">
     <!-- selectedFilteredRadioButton === 'all' || product.inStock.toString() === selectedFilteredRadioButton ||  -->
     <app-item-card 
       [product]="product"
       *ngIf="searchText === '' || product.Name.toLowerCase().includes(searchText)"
+      (click)="selectedProduct = product"
       >
     </app-item-card>
+  </ng-container>
+</div>
+
+<div class="ekart-featured-products container py-5 bg-dark text-white my-4">
+  <div class="row align-items-center">
+    <!-- Heading Section -->
+    <div class="col-12 col-lg-4 text-center text-lg-start mb-4 mb-lg-0">
+      <h1 class="display-5 fw-bold">Latest Arrival in Popular Brands</h1>
+    </div>
+
+    <!-- Featured Brands Section -->
+    <div class="col-12 col-lg-8 d-flex flex-wrap justify-content-center gap-1">
+      <app-featuredbrand>
+        <h3 class="card-title">New Arrivals in Nike</h3>
+      </app-featuredbrand>
+      <app-featuredbrand>
+        <h3 class="card-title">New Arrivals in Addidas</h3>
+      </app-featuredbrand>
+      <app-featuredbrand>
+        <h3 class="card-title">New Arrivals in Bata</h3>
+      </app-featuredbrand>
+    </div>
   </div>
 </div>
+
+
   

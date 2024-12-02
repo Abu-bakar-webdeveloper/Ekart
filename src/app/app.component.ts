@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { TopHeaderComponent } from './top-header/top-header.component';
@@ -18,6 +18,8 @@ export class AppComponent {
   title = 'Ekart';
 
   searchText: string = '';
+
+  @ViewChild(ItemsComponent) productListComponent?: ItemsComponent;
 
   setSearchText(value: string) {
     this.searchText = value;

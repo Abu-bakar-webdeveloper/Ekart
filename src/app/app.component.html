@@ -2,4 +2,4 @@
 <app-header></app-header>
 <app-search-bar (filterText)="setSearchText($event)"></app-search-bar>
 <app-items [searchText]="searchText" #ProductItemsComponent></app-items>
-<app-product-detail *ngIf="ProductItemsComponent.selectedProduct"></app-product-detail>
+<app-product-detail *ngIf="ProductItemsComponent.selectedProduct" [productListComp]="productListComponent"></app-product-detail>

@@ -4,11 +4,12 @@ import { Products } from '../../mock-products';
 import { Product } from '../../product';
 import { CommonModule } from '@angular/common';
 import { FilterComponent } from './filter/filter.component';
+import { FeaturedbrandComponent } from '../featuredbrand/featuredbrand.component';
 
 @Component({
   selector: 'app-items',
   standalone: true,
-  imports: [ItemCardComponent, CommonModule, FilterComponent],
+  imports: [ItemCardComponent, CommonModule, FilterComponent, FeaturedbrandComponent],
   templateUrl: './items.component.html',
   styleUrl: './items.component.css'
 })
